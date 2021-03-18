@@ -10,7 +10,7 @@ print("welcome to the second stage!")
 print("here is two ways of configuring your termux:")
 print("")
 print("1: Basic installisation")
-print("    automatically install and/or updating all packages that are commonly used")
+print("    automatically install and/or update all packages that are commonly used")
 print("")
 print("2: advanced installisation")
 print("    do everything as in basic installisation and let you choose what instaall additional")
@@ -64,9 +64,9 @@ subprocess.run("pkg update && pkg install nano ruby pkg-config mc zsh man texinf
 if adv == True:
 	if mpd == "1":
 		subprocess.run("pkg install mpd ncmpcpp", shell=True)
-	elif ssh == "1":
+	if ssh == "1":
 		subprocess.run("pkg install openssh", shell=True)
-	elif repos == "1":
+	if repos == "1":
 		subprocess.run("pkg install unstable-repo x11-repo", shell=True)
 subprocess.run("alias aliases_config_bash='nano ~/.bashrc' && alias aliases_config_zsh='nano ~/.zshrc'", shell=True)
 exit("Second stage finished! you can run aliases_config_[your shell] to configure aliases. syntax: alias (alias name)='coomand'")
